@@ -4,6 +4,6 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/court
+    url: jdbc:mysql://host.docker.internal:3306/court
     username: mars
     password: kejbor-1tucpE-dumsyv
