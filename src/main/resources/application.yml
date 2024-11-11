@@ -1,17 +1,13 @@
 server:
   port: 80
 
-
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_ADDRESS}/${MYSQL_DATABASE:springboot_demo}
-    username: ${MYSQL_USERNAME}
-    password: ${MySQL_PASSWORD}
   mvc:
     view:
       suffix: .html
       prefix: /
+  profiles:
+    active: ${ENV_NAME:local}
 
 mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml
