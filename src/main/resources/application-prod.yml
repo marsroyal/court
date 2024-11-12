@@ -6,4 +6,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${MYSQL_ADDRESS}/${MYSQL_DATABASE:court}
     username: ${MYSQL_USERNAME}
-    password: ${MySQL_PASSWORD}
+    password: ${MYSQL_PASSWORD}
+  redis:
+    cluster:
+      max-redirects: 5
+      nodes: ${REDIS_NODES}
+    password: ${REDIS_PASSWORD}

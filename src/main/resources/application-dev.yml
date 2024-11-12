@@ -7,3 +7,19 @@ spring:
     url: jdbc:mysql://host.docker.internal:3306/court
     username: mars
     password: kejbor-1tucpE-dumsyv
+  redis:
+    cluster:
+      max-redirects: 5
+      nodes: ${redis_url:}
+    password: ${redis_password:}
+    timeout: 3s
+    lettuce:
+      pool:
+        # 连接池的最大活动连接数量，使用负值无限制
+        max-active: 20
+        # 连接池的最大空闲连接数量，使用负值表示无限数量的空闲连接
+        max-idle: 10
+        # 连接池最大阻塞等待时间，使用负值表示没有限制
+        max-wait: -1s
+        # 最小空闲连接数量，使用正值才有效果
+        min-idle: 5

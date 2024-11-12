@@ -163,6 +163,20 @@ under the License.
       <url>https://mirrors.tencent.com/nexus/repository/maven-public/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
+
+      <mirror>
+          <id>aliyun public</id>
+          <name>aliyun public maven mirror</name>
+          <url>https://maven.aliyun.com/repository/public</url>
+          <mirrorOf>*</mirrorOf>
+      </mirror>
+
+      <mirror>
+          <id>aliyun central</id>
+          <name>aliyun central maven mirror</name>
+          <url>https://maven.aliyun.com/repository/central</url>
+          <mirrorOf>*</mirrorOf>
+      </mirror>
   </mirrors>
 
   <!-- profiles
