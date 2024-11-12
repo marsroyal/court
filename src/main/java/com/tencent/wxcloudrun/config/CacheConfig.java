@@ -45,7 +45,7 @@ import java.util.stream.Collectors;
 @EnableConfigurationProperties({CacheProperties.class})
 @EnableRedisRepositories
 public class CacheConfig {
-	private String[] redisNodes;
+	private String redisHost;
 	private String redisPassword;
 	private ObjectMapper objectMapper;
 	private CacheProperties cacheProperties;
@@ -59,16 +59,16 @@ public class CacheConfig {
 	/**
 	 * CacheConfig constructor .
 	 *
-	 * @param redisNodes    .
+	 * @param redisHost    .
 	 * @param redisPassword .
 	 * @param objectMapper  .
 	 */
 	@Autowired
-	public CacheConfig(@Value("${spring.redis.cluster.nodes}") String[] redisNodes,
+	public CacheConfig(@Value("${spring.redis.host}") String redisHost,
                        @Value("${spring.redis.password:}") String redisPassword,
                        CacheProperties cacheProperties,
                        ObjectMapper objectMapper) {
-		this.redisNodes = redisNodes;
+		this.redisHost = redisHost;
 		this.redisPassword = redisPassword;
 		this.objectMapper = objectMapper;
 		this.cacheProperties = cacheProperties;

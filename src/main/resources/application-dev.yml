@@ -8,9 +8,6 @@ spring:
     username: mars
     password: kejbor-1tucpE-dumsyv
   redis:
-    cluster:
-      max-redirects: 5
-      nodes: host.docker.internal:6379
     timeout: 3s
     lettuce:
       pool:
@@ -22,3 +19,5 @@ spring:
         max-wait: -1s
         # 最小空闲连接数量，使用正值才有效果
         min-idle: 5
+    port: 6379
+    host: host.docker.internal

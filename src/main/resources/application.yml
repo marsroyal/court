@@ -12,7 +12,7 @@ spring:
     active: ${ENV_NAME:local}
   cache:
     redis:
-      key-prefix: "${spring.application.name}:cache:"
+      key-prefix: "${spring.application.name}:${spring.profiles.active}:cache:"
       time-to-live: 600s
 mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml
