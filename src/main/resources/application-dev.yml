@@ -10,8 +10,7 @@ spring:
   redis:
     cluster:
       max-redirects: 5
-      nodes: ${redis_url:}
-    password: ${redis_password:}
+      nodes: host.docker.internal:6379
     timeout: 3s
     lettuce:
       pool:
