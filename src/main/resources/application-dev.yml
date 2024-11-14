@@ -21,3 +21,4 @@ spring:
         min-idle: 5
     port: 6379
     host: host.docker.internal
+    password: sBPC9tZL0vMW8sn
