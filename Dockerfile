@@ -19,6 +19,10 @@ COPY settings.xml pom.xml /app/
 # 自定义settings.xml, 选用国内镜像源以提高下载速度
 RUN mvn -s /app/settings.xml -f /app/pom.xml clean package
 
+FROM centos as centos
+
+COPY --from=centos  /usr/share/zoneinfo/Asia/Shanghai /etc/localtime RUN echo "Asia/Shanghai" > /etc/timezone
+
 # 选择运行时基础镜像
 FROM alpine:3.13
 
@@ -48,7 +52,3 @@ EXPOSE 80
 # 写多行独立的CMD命令是错误写法！只有最后一行CMD命令会被执行，之前的都会被忽略，导致业务报错。
 # 请参考[Docker官方文档之CMD命令](https://docs.docker.com/engine/reference/builder/#cmd)
 CMD ["java", "-jar", "/app/springboot-wxcloudrun-1.0.jar"]
-
-FROM centos as centos
-
-COPY --from=centos  /usr/share/zoneinfo/Asia/Shanghai /etc/localtime RUN echo "Asia/Shanghai" > /etc/timezone
