@@ -19,10 +19,6 @@ COPY settings.xml pom.xml /app/
 # 自定义settings.xml, 选用国内镜像源以提高下载速度
 RUN mvn -s /app/settings.xml -f /app/pom.xml clean package
 
-FROM centos as centos
-
-COPY --from=centos  /usr/share/zoneinfo/Asia/Shanghai /etc/localtime RUN echo "Asia/Shanghai" > /etc/timezone
-
 # 选择运行时基础镜像
 FROM alpine:3.13
 
@@ -43,6 +39,8 @@ WORKDIR /app
 
 # 将构建产物jar包拷贝到运行时目录中
 COPY --from=build /app/target/*.jar .
+
+COPY /usr/share/zoneinfo/Asia/Shanghai /etc/localtime RUN echo "Asia/Shanghai" > /etc/timezone
 
 # 暴露端口
 # 此处端口必须与「服务设置」-「流水线」以及「手动上传代码包」部署时填写的端口一致，否则会部署失败。
