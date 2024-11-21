@@ -8,9 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @MapperScan(basePackages = {"com.tencent.core.mapper"})
 @ComponentScan(basePackages = {"com.tencent.*"})
-public class WxCloudRunApplication {
+public class CourtApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(WxCloudRunApplication.class, args);
+    SpringApplication.run(CourtApplication.class, args);
   }
 }

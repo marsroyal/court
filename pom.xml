@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.tencent</groupId>
-    <artifactId>springboot-wxcloudrun</artifactId>
+    <artifactId>court</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <name>springboot-wxcloudrun</name>
+    <name>court</name>
     <description>Demo project for Spring Boot</description>
     <modules>
         <module>app</module>
